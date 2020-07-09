@@ -11,7 +11,6 @@ let keywords = ["Гобой","Как звучит флейта","Тромбон"
 let keyword = keywords[getRandom(0,keywords.length)];
 let ya_input = document.getElementsByClassName("input__control input__input mini-suggest__input")[0];
 let search_b = document.getElementsByTagName("button")[0];
-let next_p = document.getElementsByClassName("websearch-button__text")[0];
 
 function getRandom(min,max){
     return Math.floor(Math.random()*(max-min)+min);
@@ -29,19 +28,14 @@ function writeKeyword(word){
     },100);
 }
 
+if (ya_input != undefined)
+    writeKeyword(keyword);
+else {
 let links = document.links;
-
-if (next_p == true)
     for(let i=0; i<links.length; i++){
         if(links[i].href.indexOf("xn----7sbab5aqcbiddtdj1e1g.xn--p1ai")!=-1){
             links[i].click();
             break;
-            }
         }
-    else {
-    writeKeyword(keyword);
     }
-
-
-//document.getElementsByClassName("input__control input__input mini-suggest__input")[0].value = "нечто";
-//document.getElementsByTagName("button")[0].click();
+}
