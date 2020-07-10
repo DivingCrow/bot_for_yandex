@@ -34,6 +34,7 @@ else {
 let links = document.links;
     for(let i=0; i<links.length; i++){
         if(links[i].href.indexOf("xn----7sbab5aqcbiddtdj1e1g.xn--p1ai")!=-1){
+            links[i].setAttribute("target", "_self");
             links[i].click();
             break;
         }
